@@ -1,0 +1,72 @@
+\doxysection{runsimulation.\+h}
+\hypertarget{runsimulation_8h_source}{}\label{runsimulation_8h_source}\index{X:/Saját/prog/BME/prog2/Nagyhazi/proba2/AranyMatyasNH/runsimulation.h@{X:/Saját/prog/BME/prog2/Nagyhazi/proba2/AranyMatyasNH/runsimulation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RUNSIMULATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RUNSIMULATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}simulation.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_running_simulation}{RunningSimulation}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_simulation}{Simulation}}*\ simulation;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ pause;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ end;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ maxiteration;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ reachedTooMany;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ responsibility;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ savemode;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ CPORTA}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ userInput(sf::Event\&\ event);}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ resetAttributes()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ pause\ =\ \textcolor{keyword}{false};\ end\ =\ \textcolor{keyword}{false};\ reachedTooMany\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_running_simulation}{RunningSimulation}}();}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_running_simulation_a448b6dd6bb8eb9dd667c7d2b85a0992f}{saveMode}}()\ \{\ \textcolor{keywordflow}{return}\ savemode;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_running_simulation_a61635256ba21951c81d67860227bcf42}{saveMode}}(\textcolor{keywordtype}{bool}\ mode)\ \{\ savemode\ =\ mode;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_running_simulation_aaeb5592028ede181af6f8a16ebcc432f}{maxIteration}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ maxit)\ \{\ maxiteration\ =\ maxit;\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_running_simulation_a36bf2df1e405b8b66fba56d947460edd}{setup}}(\mbox{\hyperlink{class_simulation}{Simulation}}*\ sim,\ \textcolor{keywordtype}{bool}\ resp\ =\ \textcolor{keyword}{false},\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ maxit\ =\ 10000000);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_running_simulation_a67709c6c7f5955a55488eb43ffe5556b}{reachedMaxIt}}()\ \{\ \textcolor{keywordflow}{return}\ reachedTooMany;\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_simulation}{Simulation}}*\ \mbox{\hyperlink{class_running_simulation_a262aacca00c1d17b7d8b01f25c17c871}{getSimulation}}()\ \{\ \textcolor{keywordflow}{return}\ simulation;\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ State\ \mbox{\hyperlink{class_running_simulation_abb94c3f010688c1b59efdfb682f8133c}{startNonVisual}}(\textcolor{keywordtype}{bool}\ displaytext\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#ifndef\ CPORTA}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ State\ \mbox{\hyperlink{class_running_simulation_a6a6ec2d6453e7dbdd76bb841e2897e0f}{startVisual}}();}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_running_simulation_ac124ab15a72a07f088899f79aba5e765}{changeSimulation}}(\mbox{\hyperlink{class_simulation}{Simulation}}*\ newsim,\ \textcolor{keywordtype}{bool}\ resp\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (responsibility)\ \textcolor{keyword}{delete}\ simulation;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ responsibility\ =\ resp;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ simulation\ =\ newsim;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ resetAttributes();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_running_simulation_abe25ba506dc424ddef0b82f811e7e240}{newSystem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename)}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (simulation\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}No\ simulation\ to\ change!"{}};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ simulation-\/>\mbox{\hyperlink{class_simulation_afabf5e1ff51af91c3c9221dfdf74b309}{resetSim}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ simulation-\/>\mbox{\hyperlink{class_simulation_a4eb813445e5295cc1982224718109a90}{readFromFile}}(filename);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ resetAttributes();}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ deleteSim();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

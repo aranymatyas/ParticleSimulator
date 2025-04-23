@@ -1,0 +1,6 @@
+D Positron 500 200 0 0
+D Electron 500 700 0 0
+S Neutrino 0 0
+D Proton 1 1 1 1
+S Neutron 0 0
+D None 10 10 23 23 10 2 //Saját részecske

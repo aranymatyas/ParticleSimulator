@@ -1,0 +1,4 @@
+
+// #define CPORTA
+
+// #define TESTMODE

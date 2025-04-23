@@ -1,0 +1,3 @@
+D Proton 	500 	500	10	0
+D Electron 	500 	200 	0 	0
+//itt egy komment
